@@ -1,0 +1,21 @@
+plugins {
+    id "application"
+    id 'java'
+}
+ext {
+    javaMainClass = "com.test.injection.Main"
+}
+
+application {
+    mainClassName = javaMainClass
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation group: 'junit', name: 'junit', version: '4.12'
+    implementation group: 'com.google.inject', name: 'guice', version: '4.0'
+    implementation group: 'org.mockito', name: 'mockito-core', version: '3.2.0'
+}
