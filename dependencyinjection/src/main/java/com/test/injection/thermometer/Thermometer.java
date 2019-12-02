@@ -8,7 +8,12 @@ import javax.inject.Named;
 public class Thermometer implements ThermometerContract {
     private final TemperatureUnit unit;
 
+    // Note how the thermometer should be injectable
+    // so that Guice will be able to instantiate it.
     @Inject
+    // Note that the TemperatureUnit parameter is named
+    // to be able to differentiate it while injecting the value,
+    // since we don't have any Interface-Implementation binding.
     public Thermometer(@Named(WeatherModule.TEMPERATURE_UNIT) TemperatureUnit unit) {
         this.unit = unit;
     }

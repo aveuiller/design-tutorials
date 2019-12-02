@@ -12,6 +12,8 @@ import javax.inject.Inject;
 public class WeatherService implements WeatherContract {
     private final ThermometerContract thermometer;
 
+    // Note how the service should be injectable
+    // so that Guice will be able to instantiate it.
     @Inject
     public WeatherService(ThermometerContract thermometer) {
         this.thermometer = thermometer;
