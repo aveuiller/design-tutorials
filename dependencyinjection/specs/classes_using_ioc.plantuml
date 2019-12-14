@@ -1,0 +1,25 @@
+@startuml
+
+title Weather service class diagram using IoC
+
+interface "WeatherContract" as wc
+class "WeatherService" as w
+
+interface "ThermometerContract" as tc
+class "Thermometer" as t
+class "ThermometerWebService" as tweb
+
+enum "TemperatureUnit" as u {
+ + CELSIUS
+ + FAHRENHEIT
+}
+
+wc <|-- w
+tc <|-- t
+tc <|-- tweb
+
+w -> tc
+t --> u
+tweb --> u
+
+@enduml
